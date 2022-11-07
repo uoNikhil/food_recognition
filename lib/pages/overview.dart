@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:food_recognition/pages/mlModel.dart';
+
 
 
 class overview extends StatefulWidget {
   const overview({Key? key}) : super(key: key);
-
   @override
   State<overview> createState() => _overviewState();
 }
 
 class _overviewState extends State<overview> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    //loadModel();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,6 +82,7 @@ class _overviewState extends State<overview> {
                     ],
                   ),
                 ),
+                SizedBox(height: 10.0),
                 Container(
                   //THis contains details of meals for snacks
                   padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
@@ -99,6 +107,7 @@ class _overviewState extends State<overview> {
                     ],
                   ),
                 ),
+                SizedBox(height: 10.0),
                 Container(
                   //THis contains details of meals for snacks
                   padding: EdgeInsets.fromLTRB(20, 0, 20, 0),

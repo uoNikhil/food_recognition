@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "926341334429",
+    "project_id": "calorie-detection",
+    "storage_bucket": "calorie-detection.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926341334429:android:d2ca3e138f367ebe5e5b74",
+        "android_client_info": {
+          "package_name": "com.example.food_recognition"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926341334429-ov3rdrck42h3kh800b2gam95kit08ob6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsUspOkj2cx61kZfCdPos4AeVF-AvvQbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926341334429-ov3rdrck42h3kh800b2gam95kit08ob6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
