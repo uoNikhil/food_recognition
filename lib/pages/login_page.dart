@@ -30,8 +30,25 @@ class _loginState extends State<login> {
         child: Container(
           child : Column(
             mainAxisAlignment: MainAxisAlignment.center,
+
             children: [
               // This is for UserName
+              Expanded(
+                flex: 4,
+                child: Container(
+
+                  child: Image(image: AssetImage('resources/Fruit.jpg')),
+                ),
+              ),
+
+              Container(
+                child: Text("Login",
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                    textAlign: TextAlign.start,
+                    ),
+              ),
+              SizedBox(height: 40.0),
+
               TextField(
                 controller: _untextController,
                 decoration: InputDecoration(
@@ -76,7 +93,7 @@ class _loginState extends State<login> {
                     });
                     //Todo
                     // have authentication Validation through API
-                    if(username == 'user1' && password == 'password123') {
+                    if(username == '' && password == '') {
                       Navigator.pushNamed(context, '/overview');
                     }
                     else
