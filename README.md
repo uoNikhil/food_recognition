@@ -1,7 +1,9 @@
 ## ABOUT THE PROJECT
 This Personal Food Log App focuses on providing real time, high accuracy smartphone-based food calories detection App. This is a cross platform app, which allows user to click the picture of the food and get real time details of calories they will consume if they eat that item. The app can capture the photo through camera, uploading it to cloud, where it will be processed with our ML model, which would process the image to detect all visible individual ingredients, estimate its weight based on its surface area and calculate calories from density-volume table. This app outputs calories count and lets user track their data in easy-to-read visual format and would be capable of handling millions of food images a day. 
 
-![combine_images](https://user-images.githubusercontent.com/116195643/201564350-713eb99b-1344-40b5-8054-948dc41a15ac.jpg)
+![combine_images](https://user-images.githubusercontent.com/116195643/201564551-fbf2f5b7-bfdc-4a72-b091-92e07790be9b.jpg)
+
+
 
 
 ### Built With
