@@ -4,6 +4,11 @@ import 'package:image_picker/image_picker.dart';
 import 'package:food_recognition/pages/image_recognition.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:food_recognition/pages/mlModel.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+import 'AWS_image_recognition.dart';
+import 'package:food_recognition/pages/caloriestable.dart';
 
 class CamCap extends StatefulWidget {
   const CamCap({Key? key}) : super(key: key);
@@ -26,7 +31,8 @@ class _CamCapState extends State<CamCap> {
   //late File image_f;
   bool image_captured = false;
   String? food_item;
-  double? calories;
+  String? calories;
+  String? food_item_amazon;
 
 
   /*
@@ -43,12 +49,14 @@ class _CamCapState extends State<CamCap> {
         maxWidth: 480);
 
     String? item = await classifyImage(File(image_content!.path));
+    food_item_amazon = await UploadImagetoS3(File(image_content!.path));
     //runModel(File(image_content!.path));
     setState(()
     {
       image_f =  File(image_content!.path);
-      food_item = item;
+      food_item = food_item_amazon;
       image_captured = true;
+      calories = getCals(food_item_amazon);
       //String path = image_f.path!= null ? image_f.path :null;
     }
 
@@ -65,11 +73,13 @@ class _CamCapState extends State<CamCap> {
         maxWidth: 480);
 
     String? item = await classifyImage(File(image_content!.path));
+    food_item_amazon = await UploadImagetoS3(File(image_content!.path));
     setState(()
     {
       image_f =  File(image_content!.path);
-      food_item = item;
+      food_item = food_item_amazon;
       image_captured = true;
+      calories = getCals(food_item_amazon);
       //String path = image_f.path!= null ? image_f.path :null;
     }
 
@@ -133,7 +143,9 @@ class _CamCapState extends State<CamCap> {
                       children: [
                         Text('food item : $food_item'),
                         SizedBox(height: 10.0),
-                        Text('Calories : 00'),
+                        Text('food AMAZON item : $food_item_amazon'),
+                        SizedBox(height: 10.0),
+                        Text('Calories : $calories'),
                         SizedBox(height: 10.0),
                         Text('Add Ingredients'),
 

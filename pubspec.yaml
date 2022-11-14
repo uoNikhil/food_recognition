@@ -47,6 +47,12 @@ dependencies:
   firebase_ml_model_downloader: ^0.2.0+2
   flutter_firebase_ml_vision: ^0.0.1
 
+  http: ^0.13.5
+  uuid: ^3.0.6
+
+  amplify_flutter: ^0.6.0
+  amplify_datastore: ^0.6.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
